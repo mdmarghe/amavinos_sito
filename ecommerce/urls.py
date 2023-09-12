@@ -10,7 +10,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),
     path('catas-de-vinos/', include('catas.urls')),
-    path('articles/',include('articles.urls'))
+    path('articles/',include('articles.urls')),
+    path('store/', include('store.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
