@@ -1,0 +1,25 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<section>
+<div class="row">
+    <h1>
+        Catas List
+    </h1>
+</section>
+    <div class = "catas">
+        {% for cata in catas %}
+        <div class="catas">
+            <h2>
+                <a href="#">
+                    {{cata.name}}
+                </a>
+            </h2>
+            <p>€{{ cata.price|floatformat:2 }}</p>
+            <p>{{cata.date}}</p>
+            <p>{{cata.duration}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
