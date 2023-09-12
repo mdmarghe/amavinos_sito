@@ -11,6 +11,7 @@ urlpatterns = [
     path('', include('store.urls')),
     path('catas-de-vinos/', include('catas.urls')),
     path('articles/',include('articles.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

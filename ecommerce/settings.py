@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'catas.apps.CatasConfig',
     'articles.apps.ArticlesConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
