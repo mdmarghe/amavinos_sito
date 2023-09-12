@@ -5,6 +5,10 @@ import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
 
+def homepage(request):
+	context={}
+	return render(request, 'store/homepage.html', context)
+
 def store(request):
 	data = cartData(request)
 
