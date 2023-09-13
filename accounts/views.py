@@ -1,9 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
 def signup_view(request):
-    #articles=Article.objects.all().order_by('date')
-   # context={'articles':articles}
-    #return render(request,"articles/article_list.html",context)
-    return render(request, 'accounts/signup.html')
+    if request.method == 'POST':
+         form = UserCreationForm(request.POST)
+         if form.is_valid():
+             form.save()
+             #  log the user in
+             return redirect('..catas/catas_list.html')
+    else:
+        form = UserCreationForm()
+    return render(request, 'accounts/signup.html', { 'form': form })
