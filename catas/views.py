@@ -12,6 +12,7 @@ def catas_list(request):
     return render(request,"catas/catas_list.html",context)
 
 def cata_details(request,slug):
+    cata=Cata.objects.get(slug=slug)
     return HttpResponse(slug)
 
 
