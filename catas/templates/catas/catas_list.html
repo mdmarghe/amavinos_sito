@@ -1,25 +1,20 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-<section>
-<div class="row">
-    <h1>
-        Catas List
-    </h1>
-</section>
-    <div class = "catas">
-        {% for cata in catas %}
-        <div class="catas">
-            <h2>
-                <a href="#">
-                    {{cata.name}}
-                </a>
-            </h2>
-            <p>€{{ cata.price|floatformat:2 }}</p>
-            <p>{{cata.date}}</p>
-            <p>{{cata.duration}}</p>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-{% endblock %}
+	<div class="row">
+		{% for cata in catas %}
+		<div class="col-lg-12">
+			<div class="box-element cata">
+				<img class="thumbnail" src="{{cata.imageURL}}">
+				<h6><strong>{{cata.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{cata.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 style="display: inline-block; float: right;"><strong>€{{cata.price|floatformat:2}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock content %}
