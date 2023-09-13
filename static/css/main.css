@@ -271,3 +271,7 @@ a.highlight{
     border-radius: 4px;
     margin: 10px 0;
 }
+.full-width-image {
+    width: 100%;
+    height: auto;
+}

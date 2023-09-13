@@ -7,7 +7,8 @@ class Article(models.Model):
     body=models.TextField(blank=True)
     date=models.DateTimeField(auto_now_add=True)
     thumb = models.ImageField(default='default.png', blank=True)
-    author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=None)
+
     #add thumbnail y author
 
     def __str__(self):
