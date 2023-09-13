@@ -4,6 +4,7 @@ import json
 import datetime
 from django.http import HttpResponse
 from .models import * 
+from django.contrib.auth.decorators import login_required
 
 def catas_list(request):
     catas=Cata.objects.all().order_by('date')
@@ -12,4 +13,9 @@ def catas_list(request):
 
 def cata_details(request,slug):
     return HttpResponse(slug)
+
+
+@login_required(login_url="/catas/login/")
+def cata_create(request):
+    return render(request, 'catas/cata_create.html')
 

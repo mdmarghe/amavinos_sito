@@ -5,6 +5,9 @@ from . import views
 urlpatterns = [
 	
 	path('', views.catas_list, name="catas_list"),
+    path('<slug:slug>/', views.cata_details, name='cata_details'),
+    path('create-cata', views.cata_create, name='cata_create'),
+
     
 	
 	#path('cart/', views.cart, name="cart"),
