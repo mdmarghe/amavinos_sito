@@ -105,3 +105,38 @@ h1,h2,h3,h4,h5,h6{
     height: auto;     /* Imposta l'altezza in base all'immagine originale */
 	margin-left: 20px;
 }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.logo_head {
+	width: 2rem; /* Set the font size to match the h1 element */
+	margin: 0 10px; /* Add margin to space out the logos */
+	
+}
+.center {
+    text-align: center;
+    color: red;
+}
+
+section {
+    background-color: #f7f7f7; /* Cambia il colore del background a tuo piacimento */
+    padding: 20px; /* Aggiungi spazio intorno al contenuto all'interno del riquadro */
+    border: 2px solid #ccc; /* Aggiungi una cornice */
+    border-radius: 10px; /* Arrotonda gli angoli della cornice, se desiderato */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Add margin as needed */
+}
+
