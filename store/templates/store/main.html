@@ -72,8 +72,16 @@
 	
 
 	    <div class="form-inline my-2 my-lg-0">
-	     	<a href="#"class="btn btn-warning">Login</a>
-			 <a href="#"class="btn btn-warning" action="{% url 'accounts:logout' %}" method="post">Logout</a>
+
+	     	
+			 {% if user.is_authenticated %}
+
+			<a href="{% url 'homepage' %}"class="btn btn-warning" method="post">Logout</a>
+			<a href="{% url 'article_create' %}" class="btn btn-warning">CONTattaci</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
+                    {% endif %}
 
 	     	
 	     	<a href="{% url 'cart' %}">
