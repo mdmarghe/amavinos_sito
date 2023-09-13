@@ -9,7 +9,7 @@ def signup_view(request):
          if form.is_valid():
              form.save()
              #  log the user in
-             return redirect('..catas/catas_list.html')
+             return redirect('catas_list.')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', { 'form': form })
@@ -21,7 +21,10 @@ def login_view(request):
             # log the user in
             user = form.get_user()
             login(request, user)
-            return redirect('..catas/catas_list')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+               return redirect('catas_list')
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', { 'form': form })
