@@ -21,17 +21,7 @@ def store(request):
 	context={'products':products, 'cartItems':cartItems}
 	
 	return render(request, 'store/store.html', context)
-"""def store(request):
-	data = cartData(request)
 
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'store/store.html', context)"""
- 
 
 def cart(request):
 	data = cartData(request)
@@ -106,3 +96,4 @@ def processOrder(request):
 		)
 
 	return JsonResponse('Payment submitted..', safe=False)
+	

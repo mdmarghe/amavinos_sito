@@ -12,6 +12,7 @@ urlpatterns = [
     path('catas-de-vinos/', include('catas.urls')),
     path('articles/',include('articles.urls')),
     path('accounts/', include('accounts.urls')),
+    path('orders/', include('orders.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
