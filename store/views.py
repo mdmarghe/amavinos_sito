@@ -5,11 +5,6 @@ import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
 
-def homepage(request):
-	context={}
-	return render(request, 'store/homepage.html', context)
-
-
 def store(request):
 	data = cartData(request)
 
@@ -18,8 +13,7 @@ def store(request):
 	items = data['items']
 
 	products = Product.objects.all()
-	context={'products':products, 'cartItems':cartItems}
-	
+	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/store.html', context)
 
 
@@ -96,4 +90,3 @@ def processOrder(request):
 		)
 
 	return JsonResponse('Payment submitted..', safe=False)
-	
